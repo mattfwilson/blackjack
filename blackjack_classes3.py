@@ -82,17 +82,17 @@ def hit(hand, total):
     return total
 
 def houseHit(player_hand, player_total, house_hand, house_total):
-    #print('DEBUG: start of houseHit func')
+    print('DEBUG: start of houseHit func')
     while house_total < 16:
         if house_total == 21:
             print('>>> House got BLACKJACK! You lost.')
-            #print('DEBUG: house wins')
+            print('DEBUG: house wins')
             summaryStand(player_hand, player_total, house_hand, house_total)
             quit()
         elif house_total >= 16 and house_total < 21:
-            #print('DEBUG: in between 16-21')
+            print('DEBUG: in between 16-21')
             print(f'House stands at {house_total}')
-            #print('DEBUG: house > 16 but < 21 so stands')
+            print('DEBUG: house > 16 but < 21 so stands')
             house_total = 0
             house_total = checkHand(house_hand, house_total)
             summaryStand(player_hand, player_total, house_hand, house_total)
@@ -104,7 +104,7 @@ def houseHit(player_hand, player_total, house_hand, house_total):
                 print('It was a tie!')
             quit()
         elif house_total < 16:
-            #print('DEBUG: house still hitting to 16')
+            print('DEBUG: house still hitting to 16')
             print('\n>>> Dealing the house\'s hit...')
             time.sleep(1)
             houseHitting = random.choice(DECK)
@@ -117,8 +117,6 @@ def houseHit(player_hand, player_total, house_hand, house_total):
         print('DEBUG: house > 21 and loses')
         print('>>> House BUSTED. You win!\n')
         quit()
-
-# THIS IS A TEST FOR GIT STASH. TEST2
 
 PLAYER_DEAL = dealPlayer()
 HOUSE_DEAL = dealHouse()
