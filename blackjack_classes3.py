@@ -1,6 +1,6 @@
 # how would I calculate the total of the single first card for dealer before they hit (and show their second)
 # says I beat the house even though my total is lower than house
-# house is exponentially adding its total
+# houseHit not properly calculating win/loss/tie
 # aces on house hit are being calculated as 11
 
 import time
@@ -103,16 +103,15 @@ def houseHit(player_hand, player_total, house_hand, house_total):
             elif PLAYER_TOTAL == HOUSE_TOTAL:
                 print('It was a tie!')
             quit()
-        elif house_total < 16:
-            print('DEBUG: house still hitting to 16')
-            print('\n>>> Dealing the house\'s hit...')
-            time.sleep(1)
-            houseHitting = random.choice(DECK)
-            house_hand.append(houseHitting)
-            house_total = 0
-            house_total = checkHand(house_hand, house_total)
-            print(house_total)
-            summaryStand(player_hand, player_total, house_hand, house_total)
+        print('DEBUG: house still hitting to 16')
+        print('\n>>> Dealing the house\'s hit...')
+        time.sleep(1)
+        houseHitting = random.choice(DECK)
+        house_hand.append(houseHitting)
+        house_total = 0
+        house_total = checkHand(house_hand, house_total)
+        print(house_total)
+        summaryStand(player_hand, player_total, house_hand, house_total)
     if house_total > 21:
         print('DEBUG: house > 21 and loses')
         print('>>> House BUSTED. You win!\n')
