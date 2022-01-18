@@ -1,7 +1,6 @@
 # how would I calculate the total of the single first card for dealer before they hit (and show their second)
 # says I beat the house even though my total is lower than house
 # aces on house hit are being calculated as 11
-# TEST AGAIN
 
 
 import time
