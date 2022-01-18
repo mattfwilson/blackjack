@@ -2,7 +2,7 @@
 # says I beat the house even though my total is lower than house
 # aces on house hit are being calculated as 11
 # Test on MASTER if we the change of email to mattfwilson+1@gmail.com worked
-# Test on Mac that email change works
+# Test #2 on Mac that email change works
 
 import time
 import random
