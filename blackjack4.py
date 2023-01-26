@@ -25,7 +25,7 @@ def drawHand():
     return player_hand
 
 def showHand():
-    print(f'Your hand: {player_hand}')
+    return player_hand[0], player_hand[1]
 
 def showPiles():
     print(f'Draw pile: {len(deck)}')
@@ -37,7 +37,7 @@ while True:
     draw = input('Draw? ')
     if draw == 'y':
         drawHand()
-        showHand()
+        print(showHand())
     elif draw == 'piles':
         showPiles()
     else:
