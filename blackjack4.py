@@ -16,16 +16,16 @@ def buildDeck():
     random.shuffle(deck)
     return deck
 
-def draw():
+def drawHand():
     hand_count = 2
     for num in range(hand_count):
         card = deck.popleft()
         player_hand.append(card)
+        discard.append(card)
     return player_hand
 
 def showHand():
-    print(f'Draw pile: {len(deck)}')
-    print(f'Discard pile: {len(discard)}')
+    print(f'Your hand: {player_hand}')
 
 def showPiles():
     print(f'Draw pile: {len(deck)}')
@@ -36,7 +36,7 @@ deck = buildDeck()
 while True:
     draw = input('Draw? ')
     if draw == 'y':
-        draw()
+        drawHand()
         showHand()
     elif draw == 'piles':
         showPiles()
