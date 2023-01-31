@@ -21,8 +21,13 @@ def drawHand():
     for num in range(hand_count):
         card = deck.popleft()
         player_hand.append(card)
-        discard.append(card)
     return player_hand
+
+def discardHand(cards):
+    for card in cards:
+        discard.append(card)
+        player_hand.remove(card)
+    return discard
 
 def showHand():
     return player_hand[0], player_hand[1]
@@ -35,10 +40,15 @@ deck = buildDeck()
 
 while True:
     draw = input('Draw? ')
-    if draw == 'y':
+    if draw == 'yes':
+        discardHand(player_hand)
         drawHand()
         print(showHand())
     elif draw == 'piles':
         showPiles()
+    elif draw == 'discard':
+        print(discard)
+    elif draw == 'deck':
+        print(deck)
     else:
         quit()
