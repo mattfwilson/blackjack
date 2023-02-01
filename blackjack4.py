@@ -2,7 +2,6 @@ from collections import deque
 import itertools
 import random
 
-count = 0
 deck = deque()
 discard = deque()
 player_hand = []
@@ -18,7 +17,7 @@ def buildDeck():
 
 def drawHand():
     hand_count = 2
-    for num in range(hand_count):
+    for count in range(hand_count):
         card = deck.popleft()
         player_hand.append(card)
     return player_hand
@@ -26,7 +25,6 @@ def drawHand():
 def discardHand(cards):
     for card in cards:
         discard.append(card)
-        player_hand.remove(card)
     return discard
 
 def showHand():
