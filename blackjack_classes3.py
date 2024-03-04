@@ -40,8 +40,6 @@ def dealHouse():
     houseCards = []
     houseDeal1 = random.choice(DECK)
     houseCards.append(houseDeal1)
-    DECK.remove(houseDeal1)
-    houseDeal2 = random.choice(DECK)
     houseCards.append(houseDeal2)
     DECK.remove(houseDeal2)
     return houseCards
@@ -51,14 +49,14 @@ def summary(hand, total, houseHand, houseTotal):
     print(f'Your total: {total}\n')
     print(f'House hand:: {houseHand[0]}, (???)')
     print(f'House total: {houseHand[0][0]}')
-    print('------------------------------------------------------')
+    print('-' * 40)
 
 def summaryStand(hand, total, houseHand, houseTotal):
     print(f'\nYour hand: {hand}')
     print(f'Your total: {total}\n')
     print(f'House hand:: {houseHand}')
     print(f'House total: {houseTotal}')
-    print('------------------------------------------------------')
+    print('-' * 40)
 
 def checkHand(hand, total):
     for card in hand:
@@ -131,7 +129,7 @@ while PLAYER_STAND == 0:
             print('\n>>> You got BLACKJACK! You win!')
             summaryStand(PLAYER_DEAL, PLAYER_TOTAL, HOUSE_DEAL, HOUSE_TOTAL)
             quit()
-    
+
         hitStand = input('\n>>> Do you want to hit or stand? [h/s] ')
         if hitStand == 'h' or hitStand == 'hit':
             print('\n>>> Dealing your hit...')

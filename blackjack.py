@@ -1,4 +1,4 @@
-import random 
+import random
 
 cards = [
     "A Spades",
@@ -60,12 +60,12 @@ class Card:
     def __init__(self, suit, value):
         self.suit = suit
         self.value = value
-    
+
     def __repr__(self):
         return self.suit
 
 suits = ["Spades", "Diamonds", "Clubs", "Hearts"]
-    
+
 deck = [Card(value, suit) for value in range(1, 14) for suit in suits]
 
 print(deck)
